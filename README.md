@@ -1,6 +1,6 @@
 # fusionauth-example-cloudfront-redirect
 
-This example documents how to use a AWS CloudFront Function to redirect to country-specific URLs.
+This example documents how to use a AWS CloudFront Function to redirect to country-specific URLs, such as a FusionAuth instance.
 
 ## Setup
 
@@ -12,7 +12,7 @@ This example documents how to use a AWS CloudFront Function to redirect to count
 
     - see the example function https://github.com/FusionAuth/fusionauth-example-cloudfront-redirect/blob/main/aws/cloudfunction/function.js
     
-    - see the example article https://saedf0.medium.com/directing-traffic-how-aws-cloudfront-functions-can-redirect-users-to-country-specific-urls-c488c9ed780 to redirect uses to country-specific URLs.
+    - see the example article https://saedf0.medium.com/directing-traffic-how-aws-cloudfront-functions-can-redirect-users-to-country-specific-urls-c488c9ed780 to redirect users to country-specific URLs.
 
     - see the example article https://github.com/aws-samples/amazon-cloudfront-functions/tree/main/redirect-based-on-country to URL redirect to the county-specific version of a site.
 
@@ -24,12 +24,12 @@ This example documents how to use a AWS CloudFront Function to redirect to count
     aws cloudfront describe-function --name <function-name>
     ```
 
-- cloudfront-viewer-country set to `US`
+- cloudfront-viewer-country header set to `US`
     ```
     aws cloudfront test-function --if-match <ETAG> --name <function-name> --event-object fileb://./test/country-us.json
     ```
 
-- cloudfront-viewer-country set to `GB`
+- cloudfront-viewer-country header set to `GB`
     ```
     aws cloudfront test-function --if-match <ETAG> --name <function-name> --event-object fileb://./test/country-gb.json
     ```
