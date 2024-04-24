@@ -10,7 +10,7 @@ async function handler(event) {
               statusCode: 302,
               statusDescription: 'Found',
               headers: {
-                'location': { "value": 'https://support.fusionauth.io/admin' },
+                'location': { "value": 'https://www.example.com/us' },
               },
             };
         } else if (country === 'GB') {
@@ -18,7 +18,7 @@ async function handler(event) {
               statusCode: 302,
               statusDescription: 'Found',
               headers: {
-                'location': { "value": 'https://7355-131-226-35-36.ngrok-free.app/admin' },
+                'location': { "value": 'https://www.example.com/gb' },
               },
             };
         } else {
@@ -26,7 +26,7 @@ async function handler(event) {
               statusCode: 302,
               statusDescription: 'Not Found',
               headers: {
-                'location': { "value": 'https://www.google.com' },
+                'location': { "value": 'https://www.example.com' },
               },
             };
         }
@@ -36,7 +36,7 @@ async function handler(event) {
           statusCode: 302,
           statusDescription: 'cloudfront-viewer-country - Not Found',
           headers: {
-            'location': { "value": 'https://www.google.com' },
+            'location': { "value": 'https://www.example.com' },
           },
         };
     }
