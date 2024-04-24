@@ -10,7 +10,7 @@ This example documents how to use a AWS CloudFront Function to redirect to count
 ### Create a CloudFront function
 - see https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-tutorial.html to create a function.
 
-    - see the example function https://github.com/FusionAuth/fusionauth-example-cloudfront-redirect/blob/main/aws/cloudfunction/function.js
+    - see the example function https://github.com/FusionAuth/fusionauth-example-cloudfront-redirect/blob/main/aws/cloudfront/cloudfunction/function.js
     
     - see the example article https://saedf0.medium.com/directing-traffic-how-aws-cloudfront-functions-can-redirect-users-to-country-specific-urls-c488c9ed780 to redirect users to country-specific URLs.
 
