@@ -8,11 +8,14 @@ This example documents how to use a AWS CloudFront Function to redirect to count
 - see https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.SimpleDistribution.html to create a distribution.
 
 ### Create a CloudFront function
-- see the example article https://saedf0.medium.com/directing-traffic-how-aws-cloudfront-functions-can-redirect-users-to-country-specific-urls-c488c9ed780 to redirect uses to country-specific URLs.
+- see https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-tutorial.html to create a function.
 
-- see the example article https://github.com/aws-samples/amazon-cloudfront-functions/tree/main/redirect-based-on-country to URL redirect to the county-specific version of a site.
+    - see the example function https://github.com/FusionAuth/fusionauth-example-cloudfront-redirect/blob/main/aws/cloudfunction/function.js
+    
+    - see the example article https://saedf0.medium.com/directing-traffic-how-aws-cloudfront-functions-can-redirect-users-to-country-specific-urls-c488c9ed780 to redirect uses to country-specific URLs.
 
-- see the example function https://github.com/FusionAuth/fusionauth-example-cloudfront-redirect/blob/main/aws/cloudfunction/function.js
+    - see the example article https://github.com/aws-samples/amazon-cloudfront-functions/tree/main/redirect-based-on-country to URL redirect to the county-specific version of a site.
+
 
 ### Test the function using the AWS CLI
 
@@ -33,16 +36,16 @@ This example documents how to use a AWS CloudFront Function to redirect to count
 
 ### Associate the function with the distribution
 - see https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/associate-function.html to add an association to the function.
-- Run the function every time CloudFront receives a request.
-- This creates a behavior for the distribution.
+    - Run the function every time CloudFront receives a request.
+    - This creates a behavior for the distribution.
 
 ### Add the CloudFront-Viewer-Country header to each viewer request
-- see https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-cloudfront-headers.html for adding headers to a request.
-- Add a origin request policy to the distribution behavior to add headers.
+- see https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-cloudfront-headers.html about adding headers to a request.
+- Add a origin request policy to the distribution behavior to add additional headers.
     - Specifically, add the policy AllViewerAndCloudFrontHeaders-2022-06 to include the CloudFront-Viewer-Country header which contains the two-letter country code for the viewer’s country.
 
 ### Test the distribution
-- use the Distribution domain name or create a custom url in Route 53 pointing to the Distribution domain name.
+- use the Distribution domain name or create an alternate domain name.
 
 
 ## More
